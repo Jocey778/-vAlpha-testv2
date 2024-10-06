@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บมีมๆ เลื่อนดูเพลินๆ</title>
+    <!-- เชื่อมกับไฟล์ CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Popup -->
+    <div class="popup-bg"></div>
+    <div class="popup" id="welcomePopup">
+        <h2>ยินดีต้อนรับ!</h2>
+        <p>นี่คือ popup ต้อนรับแบบมีมๆ</p>
+        <button id="closePopup">ปิด</button>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="section-1 scroll-anim">
+        <h1>ยินดีต้อนรับสู่เว็บมีมๆ</h1>
+        <p>เว็บไซต์นี้จะทำให้คุณเลื่อนดูได้เพลินๆ ด้วยมีมและเนื้อหาที่เต็มไปด้วยความฮา</p>
+        <img src="https://www.icegif.com/wp-content/uploads/2022/01/icegif-982.gif" alt="Funny GIF">
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section-2 scroll-anim">
+        <h2>มีมที่ 2</h2>
+        <p>เลื่อนลงมาอีกหน่อย แล้วคุณจะได้เจอมีมอีกเพียบ!</p>
+        <img src="https://www.icegif.com/wp-content/uploads/2021/12/icegif-358.gif" alt="Cool GIF">
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section-3 scroll-anim">
+        <h2>มีมที่ 3</h2>
+        <p>แค่เลื่อนดูต่อไปเรื่อยๆ แล้วหัวเราะไปพร้อมกับมีมเหล่านี้!</p>
+        <img src="https://www.icegif.com/wp-content/uploads/2022/02/icegif-748.gif" alt="Funny GIF">
+    </section>
+
+    <!-- Section 4 -->
+    <section class="section-4 scroll-anim">
+        <h2>มีมสุดท้าย</h2>
+        <p>นี่คือมีมสุดท้ายแล้ว... แต่คุณสามารถเลื่อนกลับขึ้นไปเพื่อดูใหม่ได้อีกครั้ง!</p>
+        <a href="https://youtu.be/dQw4w9WgXcQ?si=WfpGiKCaZONbmy4S" target="_blank" class="button">กดตรงนี้ดิว่ะ</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2021/12/icegif-654.gif" alt="Chill GIF">
+    </section>
+
+    <footer>
+        <p>Made with ♥ by เพชรสุวรรณ</p>
+    </footer>
+
+    <script>
+        // Show popup on page load
+        window.onload = function() {
+            document.querySelector('.popup-bg').style.display = 'block';
+            document.querySelector('.popup').style.display = 'block';
+        };
+
+        // Close popup
+        document.getElementById('closePopup').onclick = function() {
+            document.querySelector('.popup-bg').style.display = 'none';
+            document.querySelector('.popup').style.display = 'none';
+        };
+
+        // Scroll animation handler
+        window.addEventListener('scroll', function() {
+            let elements = document.querySelectorAll('.scroll-anim');
+            let scrollPosition = window.scrollY + window.innerHeight;
+
+            elements.forEach(function(el) {
+                if (scrollPosition > el.offsetTop + el.offsetHeight / 4) {
+                    el.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
